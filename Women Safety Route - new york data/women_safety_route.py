@@ -107,9 +107,9 @@ def train_ANN_model(data_normalized):
 
     # Define the ANN model
     model = tf.keras.Sequential([
-        tf.keras.layers.Dense(128, activation="sigmoid", input_shape=(data_normalized.shape[1] - 2,)),  # Exclude lat/lon
-        tf.keras.layers.Dense(64, activation="sigmoid"),
-        tf.keras.layers.Dense(32, activation="sigmoid"),
+        tf.keras.layers.Dense(128, activation="relu", input_shape=(data_normalized.shape[1] - 2,)),  # Exclude lat/lon
+        tf.keras.layers.Dense(64, activation="relu"),
+        tf.keras.layers.Dense(32, activation="relu"),
         tf.keras.layers.Dense(1, activation="sigmoid")  # Output safety index between 0 and 1
     ])
 
